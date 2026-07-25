@@ -1,0 +1,9 @@
+diff --git a/hw/xbox/mcpx/apu/apu.c b/hw/xbox/mcpx/apu/apu.c
+--- a/hw/xbox/mcpx/apu/apu.c
++++ b/hw/xbox/mcpx/apu/apu.c
+@@
+-        throttle(d);
+-        se_frame(d);
++        /* NULL APU */
++        qemu_cond_wait(&d->cond, &d->lock);
++        continue;
